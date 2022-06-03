@@ -1,4 +1,5 @@
 chrome.storage.sync.get("flag", ({ flag }) => {
+  console.log(flag);
   if (flag == true) {
     chrome.storage.sync.set({ flag: false });
 
@@ -12,6 +13,20 @@ chrome.storage.sync.get("flag", ({ flag }) => {
       message: "alram",
       payload: { solutionId },
     });
+
+    // chrome.runtime.sendMessage(
+    //   {
+    //     message: "alram",
+    //   },
+    //   (response) => {
+    //     if (response.message === "success") {
+    //       console.log("로그인 성공");
+    //     } else if (response.message === "login") {
+    //       console.log("로그인하세요");
+    //       // window.location.href = "./login.html";
+    //     }
+    //   },
+    // );
   }
 });
 
