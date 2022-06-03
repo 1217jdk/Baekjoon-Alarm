@@ -13,33 +13,5 @@ chrome.storage.sync.get("flag", ({ flag }) => {
       message: "alram",
       payload: { solutionId },
     });
-
-    // chrome.runtime.sendMessage(
-    //   {
-    //     message: "alram",
-    //   },
-    //   (response) => {
-    //     if (response.message === "success") {
-    //       console.log("로그인 성공");
-    //     } else if (response.message === "login") {
-    //       console.log("로그인하세요");
-    //       // window.location.href = "./login.html";
-    //     }
-    //   },
-    // );
   }
 });
-
-// var pusher = new Pusher("a2cb611847131e062b32", {
-//   cluster: "ap1",
-// });
-// Notification.requestPermission();
-
-// var channel = pusher.subscribe("solution-" + solutionId);
-
-// channel.bind("update", (data) => {
-//   console.log(data.result);
-//   if (data.result >= 4) {
-//     new Notification("동규바보", { body: "된다!" });
-//   }
-// });
