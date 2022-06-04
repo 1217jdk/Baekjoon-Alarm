@@ -1,5 +1,4 @@
 chrome.storage.sync.get("flag", ({ flag }) => {
-  console.log(flag);
   if (flag == true) {
     chrome.storage.sync.set({ flag: false });
 
@@ -7,11 +6,13 @@ chrome.storage.sync.get("flag", ({ flag }) => {
       .getElementById("status-table")
       .getElementsByTagName("td")[0].innerText;
 
-    console.log("chrome: ", chrome);
-    console.log("runtime: ", chrome.runtime);
+    var problemId = document
+      .getElementById("status-table")
+      .getElementsByTagName("td")[2].innerText;
+
     chrome.runtime.sendMessage({
       message: "alram",
-      payload: { solutionId },
+      payload: { solutionId, problemId },
     });
   }
 });

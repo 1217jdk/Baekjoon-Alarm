@@ -1,6 +1,6 @@
 {
-  "name": "Getting Started Example",
-  "description": "Build an Extension!",
+  "name": "백준 알람",
+  "description": "채점이 완료되면 알림을 띄워줘요!",
   "version": "1.0",
   "manifest_version": 3,
   "content_scripts": [
@@ -10,12 +10,18 @@
     },
     {
       "matches": ["https://www.acmicpc.net/*"],
-      "js": ["pusher.js", "alram-script.js"]
+      "js": ["alram-script.js"]
     }
   ],
   "background": {
     "service_worker": "alram.js"
   },
 
-  "permissions": ["storage", "notifications"]
+  "permissions": ["storage", "notifications"], 
+  "icons": {
+    "16": "/Notification.png",
+    "32": "/Notification.png",
+    "48": "/Notification.png",
+    "128": "/Notification.png"
+  }
 }
