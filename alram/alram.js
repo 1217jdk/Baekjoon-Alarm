@@ -4,6 +4,7 @@ chrome.runtime.onInstalled.addListener(() => {
 
 importScripts("pusher.worker.js");
 
+// 채점 결과
 var solution_id_kor = [
   "기다리는 중",
   "재채점을 기다리는 중",
@@ -24,14 +25,19 @@ var solution_id_kor = [
   "런타임 에러 이유를 찾는 중",
 ];
 
+// 메시지 수신
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.message === "alram") {
+    // pusher 연결
     var pusher = new this.Pusher("a2cb611847131e062b32", {
       cluster: "ap1",
     });
 
+    // 채널 구독
     var channel = pusher.subscribe("solution-" + request.payload.solutionId);
 
+    // 채점이 끝날 때까지 업데이트하고,
+    // 채점이 완료되면 알림을 띄움
     channel.bind("update", (data) => {
       if (data.result >= 4) {
         sendNotification(
@@ -45,11 +51,12 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   }
 });
 
+// 알림을 띄워주는 함수
 function sendNotification(notiId, result, problemId) {
   chrome.notifications.create(notiId, {
     type: "basic",
     title: result,
-    iconUrl: "Notification.png",
+    iconUrl: "icon.png",
     message: problemId,
     priority: 2, // -2 to 2 (highest)
 

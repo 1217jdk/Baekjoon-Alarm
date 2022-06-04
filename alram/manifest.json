@@ -9,7 +9,7 @@
       "js": ["flag-change.js"]
     },
     {
-      "matches": ["https://www.acmicpc.net/*"],
+      "matches": ["https://www.acmicpc.net/status?*"],
       "js": ["alram-script.js"]
     }
   ],
@@ -19,9 +19,9 @@
 
   "permissions": ["storage", "notifications"], 
   "icons": {
-    "16": "/Notification.png",
-    "32": "/Notification.png",
-    "48": "/Notification.png",
-    "128": "/Notification.png"
+    "16": "/icon.png",
+    "32": "/icon.png",
+    "48": "/icon.png",
+    "128": "/icon.png"
   }
 }
