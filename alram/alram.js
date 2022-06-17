@@ -2,8 +2,6 @@ chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.sync.set({ flag: false });
 });
 
-importScripts("pusher.worker.js");
-
 // 채점 결과
 var solution_id_kor = [
   "기다리는 중",
@@ -28,26 +26,39 @@ var solution_id_kor = [
 // 메시지 수신
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.message === "alram") {
-    // pusher 연결
-    var pusher = new this.Pusher("a2cb611847131e062b32", {
-      cluster: "ap1",
-    });
+    var details = {
+      solution_id: request.payload.solutionId,
+    };
 
-    // 채널 구독
-    var channel = pusher.subscribe("solution-" + request.payload.solutionId);
+    var formBody = [];
+    for (var property in details) {
+      var encodedKey = encodeURIComponent(property);
+      var encodedValue = encodeURIComponent(details[property]);
+      formBody.push(encodedKey + "=" + encodedValue);
+    }
+    formBody = formBody.join("&");
 
-    // 채점이 끝날 때까지 업데이트하고,
-    // 채점이 완료되면 알림을 띄움
-    channel.bind("update", (data) => {
-      if (data.result >= 4) {
-        sendNotification(
-          request.payload.solutionId,
-          solution_id_kor[data.result],
-          request.payload.problemId.trim() + "번",
-        );
-      }
-    });
-    return true;
+    let interval = setInterval(() => {
+      fetch("https://www.acmicpc.net/status/ajax", {
+        method: "POST",
+        headers: {
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "x-requested-with": "XMLHttpRequest",
+        },
+        body: formBody,
+      }).then((res) => {
+        res.json().then((data) => {
+          if (data.result > 3) {
+            clearInterval(interval);
+            sendNotification(
+              request.payload.solutionId,
+              solution_id_kor[data.result],
+              request.payload.problemId.trim() + "번",
+            );
+          }
+        });
+      });
+    }, 2000);
   }
 });
 

@@ -7,14 +7,18 @@ chrome.storage.sync.get("flag", ({ flag }) => {
     var solutionId = document
       .getElementById("status-table")
       .getElementsByTagName("td")[0].innerText;
+    var userName = document
+      .getElementById("status-table")
+      .getElementsByTagName("td")[1].innerText;
     var problemId = document
       .getElementById("status-table")
       .getElementsByTagName("td")[2].innerText;
 
+    console.log("데이터 가져오기");
     // service worker에 메시지 전달
     chrome.runtime.sendMessage({
       message: "alram",
-      payload: { solutionId, problemId },
+      payload: { solutionId, userName, problemId },
     });
   }
 });

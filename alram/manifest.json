@@ -10,14 +10,14 @@
     },
     {
       "matches": ["https://www.acmicpc.net/status?*"],
-      "js": ["alram-script.js"]
+      "js": ["jquery.js", "alram-script.js"]
     }
   ],
   "background": {
     "service_worker": "alram.js"
   },
 
-  "permissions": ["storage", "notifications"], 
+  "permissions": ["storage", "notifications", "bookmarks", "system.storage"], 
   "icons": {
     "16": "/icon.png",
     "32": "/icon.png",
