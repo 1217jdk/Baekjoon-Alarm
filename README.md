@@ -1,6 +1,6 @@
 # ✨Baekjoon-Alarm✨  
 
-<img src="https://img.shields.io/badge/chrome-4285F4?style=for-the-badge&logo=chrome&logoColor=white">
+<img src="https://img.shields.io/badge/Google-Chrome-4285F4?style=for-the-badge&logo=chrome&logoColor=white">
 
 <br>  
 
