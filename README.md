@@ -5,7 +5,7 @@
 
 <img src="https://img.shields.io/badge/Google Chrome-4285F4?style=for-the-badge&logo=Google Chrome&logoColor=red">   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black">
 
-<br>  https://github.com/sawol/Baekjoon-Alarm
+<br>
 
 ### _백준(BOJ) 사이트에서, 채점이 완료되면 알람을 띄워주는 크롬 확장 프로그램 입니다._  
 
