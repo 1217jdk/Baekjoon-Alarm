@@ -1,8 +1,9 @@
 # ✨Baekjoon-Alarm✨  
-<br>
+<br>  
 ### _백준(BOJ) 사이트에서, 채점이 완료되면 알람을 띄워주는 크롬 확장 프로그램 입니다._  
 <br>  
 <br>  
+
 ![image](https://user-images.githubusercontent.com/55649302/175318008-30e5a5b5-c7ae-4d3d-835d-c34f06b601cd.png)  
 <br>  
 <br>  
