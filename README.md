@@ -13,6 +13,7 @@
 ## Installation
 [백준 알람 크롬 확장 프로그램 설치하러 가기](https://chrome.google.com/webstore/detail/%EB%B0%B1%EC%A4%80-%EC%95%8C%EB%9E%8Cboj-alram/piedmchdfegdhgedliponahpdaniompb?hl=ko)
 
+<br>  
 
 ## 실행 화면  
 ![image](https://user-images.githubusercontent.com/55649302/175318008-30e5a5b5-c7ae-4d3d-835d-c34f06b601cd.png)  
