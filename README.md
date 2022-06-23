@@ -1,5 +1,8 @@
 # ✨Baekjoon-Alarm✨  
 <br>  
+<a href="https://github.com/sawol/Baekjoon-Alarm/graphs/contributors"><img src="https://opencollective.com/Baekjoon-Alarm/contributors.svg?width=720"></a>
+
+[![LICENSE](https://img.shields.io/dub/l/vibe-d.svg?style=flat-square)](https://github.com/JaeYeopHan/Interview_Question_for_Beginner/blob/master/LICENSE)  
 
 ### _백준(BOJ) 사이트에서, 채점이 완료되면 알람을 띄워주는 크롬 확장 프로그램 입니다._  
 
