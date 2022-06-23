@@ -1,5 +1,5 @@
 {
-  "name": "백준 알람",
+  "name": "백준 알람(BOJ Alram)",
   "description": "채점이 완료되면 알림을 띄워줘요!",
   "version": "1.0",
   "manifest_version": 3,
@@ -10,11 +10,11 @@
     },
     {
       "matches": ["https://www.acmicpc.net/status?*"],
-      "js": ["alram-script.js"]
+      "js": ["get-data-script.js"]
     }
   ],
   "background": {
-    "service_worker": "alram.js"
+    "service_worker": "background.js"
   },
 
   "permissions": ["storage", "notifications"], 

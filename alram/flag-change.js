@@ -1,7 +1,7 @@
 // 제출 버튼
-var button = document.getElementById("submit_button");
+const submitBtn = document.getElementById("submit_button");
 
 // 제출 버튼 클릭 체크
-button.addEventListener("click", () => {
-  chrome.storage.sync.set({ flag: true });
+submitBtn.addEventListener("click", () => {
+  chrome.storage.sync.set({ isSubmitted: true });
 });
